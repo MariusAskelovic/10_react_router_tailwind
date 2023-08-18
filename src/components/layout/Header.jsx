@@ -10,7 +10,6 @@ export default function Header() {
         <nav>
           <NavLink
             to="/"
-            activeClassName="boom"
             className="border hover:bg-slate-400 border-cyan-600  p-3 px-3 py-1"
           >
             Home
@@ -20,6 +19,12 @@ export default function Header() {
             className="border hover:bg-slate-400 border-cyan-600 p-3 px-3 py-1"
           >
             About
+          </NavLink>
+          <NavLink
+            to="/contacts"
+            className="border hover:bg-slate-400 border-cyan-600 p-3 px-3 py-1"
+          >
+            Contacts
           </NavLink>
           <NavLink
             to="/books"
