@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 export default function Header() {
   return (
     <header className="mb-4">
@@ -6,18 +8,25 @@ export default function Header() {
           React<span className="font-bold">Router</span>
         </a>
         <nav>
-          <a
-            href="/"
-            className="border hover:bg-slate-400 border-cyan-600 p-3 px-3 py-1"
+          <NavLink
+            to="/"
+            activeClassName="boom"
+            className="border hover:bg-slate-400 border-cyan-600  p-3 px-3 py-1"
           >
             Home
-          </a>
-          <a
-            href="/about"
+          </NavLink>
+          <NavLink
+            to="/about"
             className="border hover:bg-slate-400 border-cyan-600 p-3 px-3 py-1"
           >
             About
-          </a>
+          </NavLink>
+          <NavLink
+            to="/books"
+            className="border hover:bg-slate-400 border-cyan-600 p-3 px-3 py-1"
+          >
+            Books
+          </NavLink>
         </nav>
       </div>
     </header>

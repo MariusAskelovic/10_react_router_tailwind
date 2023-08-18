@@ -10,7 +10,6 @@ export default function HomePage() {
         obcaecati voluptatem dolorem, quas dolorum exercitationem natus dolore
         esse.
       </p>
-      <button>Click me</button>
     </div>
   );
 }
