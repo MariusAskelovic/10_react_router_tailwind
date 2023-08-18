@@ -32,6 +32,12 @@ export default function Header() {
           >
             Books
           </NavLink>
+          <NavLink
+            to="/books/new"
+            className="border hover:bg-slate-400 border-cyan-600 p-3 px-3 py-1"
+          >
+            New Book
+          </NavLink>
         </nav>
       </div>
     </header>

@@ -11,7 +11,7 @@ export default function BookLink() {
   }, [bookData]);
 
   return (
-    <ul>
+    <ul className="grid grid-cols-3 gap-3 place-content-center">
       {bookData.map((obj) => (
         <li
           key={obj.id}
