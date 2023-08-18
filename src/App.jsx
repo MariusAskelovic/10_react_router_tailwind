@@ -1,7 +1,9 @@
+import HomePage from './pages/HomePage';
+
 export default function App() {
   return (
     <div>
-      <h1>new topic</h1>
+      <HomePage />
     </div>
-  )
+  );
 }
