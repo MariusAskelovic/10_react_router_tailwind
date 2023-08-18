@@ -5,21 +5,16 @@ export default function SingleBookPage() {
   const params = useParams();
 
   const [currentBook, setCurrentBook] = useState({});
-  const [bookData, setBookData] = useState([]);
 
   useEffect(() => {
     fetch('/db/books.json')
       .then((resp) => resp.json())
       .then((data) => {
-        setBookData(data);
+        const found = data.find((bObj) => bObj.id.toString() === params.bookId);
+        setCurrentBook(found || {});
       })
       .catch(console.warn);
-  }, []);
-
-  useEffect(() => {
-    const found = bookData.find((bObj) => bObj.id.toString() === params.bookId);
-    setCurrentBook(found || {});
-  }, [params.bookId, bookData]);
+  }, [params.bookId]);
 
   return (
     <div className="container">
