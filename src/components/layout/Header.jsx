@@ -1,26 +1,25 @@
-import { useState } from 'react';
-
 export default function Header() {
-  const [activePage, setActivePage] = useState(1);
-
   return (
-    <div>
-      <button
-        onClick={() => {
-          setActivePage(1);
-        }}
-        className="border hover:bg-slate-400 border-cyan-600 p-3 rounded-sm px-3 py-1"
-      >
-        Home
-      </button>
-      <button
-        onClick={() => {
-          setActivePage(2);
-        }}
-        className="border hover:bg-slate-400 border-cyan-600 p-3 borderrounder-sm px-3 py-1"
-      >
-        About
-      </button>
-    </div>
+    <header className="mb-4">
+      <div className="container flex justify-between">
+        <a href="" className="text-lg ">
+          React<span className="font-bold">Router</span>
+        </a>
+        <nav>
+          <a
+            href="/"
+            className="border hover:bg-slate-400 border-cyan-600 p-3 px-3 py-1"
+          >
+            Home
+          </a>
+          <a
+            href="/about"
+            className="border hover:bg-slate-400 border-cyan-600 p-3 px-3 py-1"
+          >
+            About
+          </a>
+        </nav>
+      </div>
+    </header>
   );
 }
