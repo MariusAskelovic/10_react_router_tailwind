@@ -1,20 +1,25 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { bookData } from '../assets/db';
 
 export default function SingleBookPage() {
   const params = useParams();
-  console.log('params ===', params);
 
   const [currentBook, setCurrentBook] = useState({});
+  const [bookData, setBookData] = useState([]);
 
   useEffect(() => {
-    console.log('bookData ===', bookData);
-    // surasti knygos objekta kurio id yra lygus params.bookId
+    fetch('/db/books.json')
+      .then((resp) => resp.json())
+      .then((data) => {
+        setBookData(data);
+      })
+      .catch(console.warn);
+  }, []);
+
+  useEffect(() => {
     const found = bookData.find((bObj) => bObj.id.toString() === params.bookId);
-    console.log('found ===', found);
-    setCurrentBook(found);
-  }, [params.bookId]);
+    setCurrentBook(found || {});
+  }, [params.bookId, bookData]);
 
   return (
     <div className="container">

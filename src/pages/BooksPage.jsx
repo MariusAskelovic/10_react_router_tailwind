@@ -1,7 +1,19 @@
 import { Link } from 'react-router-dom';
-import { bookData } from '../assets/db';
+// import { bookData } from '../assets/db';
+import { useEffect, useState } from 'react';
 
 export default function BooksPage() {
+  const [bookData, setBookData] = useState([]);
+  useEffect(() => {
+    fetch('/db/books.json')
+      .then((resp) => resp.json())
+      .then((data) => {
+        // console.log(data);
+        setBookData(data);
+      })
+      .catch(console.warn);
+  }, []);
+
   return (
     <div className="container">
       <h1 className="text-3xl font-bold underline pb-4">Books page</h1>
