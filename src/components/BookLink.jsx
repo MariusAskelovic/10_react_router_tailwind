@@ -1,18 +1,9 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function BookLink() {
-  const [bookData, setBookData] = useState([]);
-  useEffect(() => {
-    fetch('/db/books.json')
-      .then((resp) => resp.json())
-      .then((data) => setBookData(data))
-      .catch(console.warn);
-  }, [bookData]);
-
+export default function BookLink(props) {
   return (
     <ul className="grid grid-cols-3 gap-3 place-content-center">
-      {bookData.map((obj) => (
+      {props.bookData.map((obj) => (
         <li
           key={obj.id}
           className="mt-1 border-4 border-blue-800 p-3 rounded-tl-xl rounded-br-xl

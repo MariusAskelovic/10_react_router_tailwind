@@ -13,12 +13,11 @@ export default function NewBookPage() {
       .then((resp) => resp.json())
       .then((data) => setBookData(data))
       .catch(console.warn);
-  }, [bookData]);
+  }, []);
 
   function inputTitle(event) {
     setAddTitle(event.target.value);
   }
-
   function inputAuthor(event) {
     setAddAuthor(event.target.value);
   }
@@ -34,8 +33,6 @@ export default function NewBookPage() {
 
   function handleBook(event) {
     event.preventDefault();
-    console.log(bookData);
-
     const newId = Math.random().toString().slice(4, 9);
     const newBook = {
       id: newId,
@@ -45,9 +42,9 @@ export default function NewBookPage() {
       genre: addGenre,
       category: addCategory,
     };
-    console.log('newBook ===', newBook);
-    setBookData([...bookData, newBook]);
-    console.log(bookData);
+    const newArr = [...bookData, newBook];
+    setBookData(newArr);
+    console.log('bookData ===', bookData);
   }
 
   return (
