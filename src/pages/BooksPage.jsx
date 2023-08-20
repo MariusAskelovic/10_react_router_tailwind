@@ -4,11 +4,12 @@ import BookLink from '../components/BookLink';
 export default function BooksPage() {
   const [filter, setFilter] = useState('');
   const [filteredBooks, setFilteredBooks] = useState([]);
-  function handleFilterChange(event) {
-    setFilter(event.target.value);
-  }
+  // function handleFilterChange(event) {
+  //   setFilter(event.target.value);
+  // }
   function getFiltered(event) {
     event.preventDefault();
+    setFilter(event.target.value);
     const newArr = bookData.filter((obj) =>
       obj.genre.toLowerCase().includes(filter.toLowerCase()),
     );
@@ -37,7 +38,7 @@ export default function BooksPage() {
             id="filterBooks"
             placeholder="type genre"
             className="border-2 border-blue-600 w-28 text-center m-0 text-sm"
-            onChange={handleFilterChange}
+            onChange={getFiltered}
             value={filter}
           />
           <button
