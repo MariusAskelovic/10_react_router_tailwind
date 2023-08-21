@@ -1,30 +1,24 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-export default function BookLink(props) {
+function BookList(props) {
   return (
-    <ul className="grid grid-cols-3 gap-3 place-content-center">
-      {props.bookData.map((obj) => (
-        <li
-          key={obj.id}
-          className="mt-1 border-4 border-blue-800 p-3 rounded-tl-xl rounded-br-xl
-            bg-gradient-to-tr from-green-200 to-orange-100
-            place-items-center"
-        >
-          <Link to={`/books/${obj.id}`}>
-            <h3 className="text-xl font-bold text-cyan-700">{obj.title}</h3>
-            <div className="grid grid-cols-2">
-              <p>
-                Years: <br></br>
-                <strong>{obj.year}</strong>
-              </p>
-              <p className="text-md text-blue-600">
-                Genre: <br></br>
-                <strong>{obj.genre}</strong>
-              </p>
-            </div>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <li>
+      <Link className="" to={`/books/${props.id}`}>
+        <span>{props.title}</span> - <strong>category: </strong>
+        {props.category}
+      </Link>
+    </li>
   );
 }
+// aprasom duomenu tipus ir reikalinguma su proptypes
+BookList.propTypes = {
+  title: PropTypes.string.isRequired,
+  id: PropTypes.oneOfType([
+    PropTypes.number.isRequired,
+    PropTypes.string.isRequired,
+  ]),
+  category: PropTypes.string.isRequired,
+};
+
+export default BookList;
