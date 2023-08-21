@@ -31,23 +31,23 @@ export default function BooksPage() {
 
       <div className="flex justify-between">
         <h2 className="text-2xl font-medium mb-2">Pick a book</h2>
-        <form action="submit" className="flex gap-2">
-          <input
-            type="text"
-            name="filter"
-            id="filterBooks"
-            placeholder="type genre"
-            className="border-2 border-blue-600 w-28 text-center m-0 text-sm"
-            onChange={getFiltered}
-            value={filter}
-          />
-          <button
+        {/* <form action="submit" className="flex gap-2"> */}
+        <input
+          type="text"
+          name="filter"
+          id="filterBooks"
+          placeholder="type genre"
+          className="border-2 border-blue-600 w-28 text-center m-0 text-sm"
+          onChange={getFiltered}
+          value={filter}
+        />
+        {/* <button
             className="border-4 bg-blue-400 text-white font-bold text-lg border-blue-600 px-2 text-center m-0"
             onClick={getFiltered}
           >
             Filter
-          </button>
-        </form>
+          </button> */}
+        {/* </form> */}
       </div>
       <BookLink
         bookData={filteredBooks.length > 0 ? filteredBooks : bookData}

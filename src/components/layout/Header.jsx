@@ -1,10 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
 export default function Header() {
-  function getInputData() {
-    console.log('aa');
-  }
-
   return (
     <header className="mb-4">
       <div className="container flex justify-between">
