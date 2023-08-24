@@ -30,7 +30,9 @@ export default function BookPageWithSearch() {
 
   return (
     <div className="container">
-      <h1 className="text-3xl font-bold underline pb-4">Books page</h1>
+      <h1 className="text-xl lg:text-3xl xl:text-5xl xl:font-bold underline pb-4">
+        Books page
+      </h1>
       <p>See alll the books we have</p>
 
       <fieldset className="border border-slate-500 p-4 flex gap-ė">
@@ -45,7 +47,8 @@ export default function BookPageWithSearch() {
       </fieldset>
 
       <h2 className="text-2xl font font-medium mb-2">Pick a book</h2>
-      <ul>
+      {/* <ul className="grid md:grid-cols-2 xl:grid-cols-3 gap-3 "> */}
+      <ul className="grid grid-cols-12 gap-1">
         {/* sukti cikla per bookData ir sugeneruoti nuorodas su title */}
         {filtered.map((bObj) => (
           <BookItem

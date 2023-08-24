@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function BookItem(props) {
   return (
-    <li>
+    <li className="border border-slate-400 p-3 lg:col-span-4 xl:col-span-3">
       <Link className="" to={`/books/${props.id}`}>
         <span>{props.title}</span> - <strong>category: </strong>
         {props.category}
